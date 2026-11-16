@@ -1,5 +1,24 @@
 # Barley & Bone | Premium Website Template
 
+<!-- README SHOWCASE START -->
+
+<div align="center">
+
+[![Barley & Bone website preview](https://image.thum.io/get/noanimate/width/1200/crop/850/maxAge/72/https://barley-bone.vercel.app/)](https://barley-bone.vercel.app/)
+
+**Boutique pet eCommerce**
+
+[**View Live Website (Vercel)**](https://barley-bone.vercel.app/) &nbsp;·&nbsp; [**GitHub Pages Demo**](https://mrpranavpatel.github.io/Barley-Bone/) &nbsp;·&nbsp; [**Source Code**](https://github.com/MRPRANAVPATEL/Barley-Bone)
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) ![Responsive](https://img.shields.io/badge/Responsive-Design-297F67) ![Static Site](https://img.shields.io/badge/Deployment-Live-267d45)
+
+</div>
+
+*Preview is generated from the public Vercel website using Thum.io and may take a moment to appear or reflect recent changes.*
+
+<!-- README SHOWCASE END -->
+
+
 **Thoughtfully built by Pranav Patel.**
 
 Premium editorial pet eCommerce storefront template for dog accessories, built with HTML, CSS and JavaScript.
