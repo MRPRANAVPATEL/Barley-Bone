@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barley &amp; Bone — Good things for good dogs</title>
+  <meta name="description" content="Small-batch leads, beds and everyday objects for dogs who live well. Barley &amp; Bone is a frontend design demo — no real orders are taken.">
+  <meta name="theme-color" content="#F7F6F3">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    /* Enables the scroll/entrance states in CSS. If the main script fails to load, they are switched off again. */
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__bb) document.documentElement.classList.remove('js'); }, 3500);
+  </script>
+</head>
+
+<body>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- A. Announcement bar -->
+  <div class="announce" role="region" aria-label="Announcements">
+    <ul class="announce__list">
+      <li class="announce__item is-active">Complimentary shipping on orders over $75</li>
+      <li class="announce__item">Autumn / Winter 26 is here — new leads, beds and blankets</li>
+      <li class="announce__item">Made in small batches. When it&rsquo;s gone, it&rsquo;s gone.</li>
+    </ul>
+  </div>
+
+  <div class="sentinel" data-sentinel aria-hidden="true"></div>
+
+  <!-- B. Navigation -->
+  <header class="site-header" data-header id="top">
+    <div class="wrap site-header__in">
+      <a class="logo" href="#top" aria-label="Barley &amp; Bone — back to top">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M7 5C3 8 3 16 6 20c4-2 5-9 4-13Z" fill="currentColor"/>
+          <path d="M25 5c4 3 4 11 1 15-4-2-5-9-4-13Z" fill="currentColor"/>
+          <path d="M9 14c0-5 3-8 7-8s7 3 7 8v3c0 5-3 9-7 9s-7-4-7-9Z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="13.2" cy="15" r="1.3" fill="currentColor"/>
+          <circle cx="18.8" cy="15" r="1.3" fill="currentColor"/>
+          <path d="M14.4 20.6h3.2L16 22.4Z" fill="currentColor"/>
+        </svg>
+        <span class="logo__word">Barley<span class="logo__amp">&amp;</span>Bone</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#shop"><span class="roll"><span class="roll__in" data-t="Shop">Shop</span></span></a></li>
+          <li><a href="#collections"><span class="roll"><span class="roll__in" data-t="Collections">Collections</span></span></a></li>
+          <li><a href="#campaign"><span class="roll"><span class="roll__in" data-t="Stories">Stories</span></span></a></li>
+          <li><a href="#about"><span class="roll"><span class="roll__in" data-t="About">About</span></span></a></li>
+          <li><a href="#newsletter"><span class="roll"><span class="roll__in" data-t="Journal">Journal</span></span></a></li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <button class="icon-btn" type="button" data-open="search" aria-label="Search the shop" aria-haspopup="dialog">
+          <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        </button>
+        <button class="icon-btn bag-btn" type="button" data-open="cart" aria-label="Open bag, 0 items" aria-haspopup="dialog">
+          <svg class="i" aria-hidden="true"><use href="#i-bag"/></svg>
+          <span class="bag-btn__count" data-cart-count aria-hidden="true">0</span>
+        </button>
+        <button class="burger" type="button" data-open="menu" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
+    <nav aria-label="Mobile">
+      <ol class="menu__list">
+        <li><a href="#shop"><span class="mono">01</span>Shop</a></li>
+        <li><a href="#collections"><span class="mono">02</span>Collections</a></li>
+        <li><a href="#campaign"><span class="mono">03</span>Stories</a></li>
+        <li><a href="#about"><span class="mono">04</span>About</a></li>
+        <li><a href="#newsletter"><span class="mono">05</span>Journal</a></li>
+      </ol>
+    </nav>
+    <div class="menu__foot mono">
+      <span>Autumn / Winter 26</span>
+      <span>Frontend demo storefront</span>
+    </div>
+  </div>
+
+  <!-- Search overlay -->
+  <div class="search" id="search" hidden role="dialog" aria-modal="true" aria-label="Search the shop">
+    <div class="wrap search__in">
+      <div class="search__bar">
+        <label class="mono" for="searchInput">Search</label>
+        <button class="icon-btn" type="button" data-close aria-label="Close search"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <input class="search__input" id="searchInput" type="search" placeholder="Leash, bed, ball&hellip;" autocomplete="off" spellcheck="false" aria-controls="searchResults">
+      <div class="search__chips" aria-label="Suggestions">
+        <button type="button" class="chip" data-suggest="leash">Leash</button>
+        <button type="button" class="chip" data-suggest="bed">Bed</button>
+        <button type="button" class="chip" data-suggest="ball">Ball</button>
+        <button type="button" class="chip" data-suggest="bowl">Bowl</button>
+      </div>
+      <ul class="search__results" id="searchResults" aria-live="polite"></ul>
+      <p class="mono search__note">Simulated search &mdash; it filters the demo catalogue on this page only.</p>
+    </div>
+  </div>
+
+  <!-- Bag drawer -->
+  <aside class="cart" id="cart" hidden role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="cart__head">
+      <h2 class="cart__title" id="cartTitle">Your bag</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close bag"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <ul class="cart__list" id="cartList"></ul>
+    <div class="cart__foot">
+      <div class="cart__sub"><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+      <button class="btn btn--block" type="button" id="checkoutBtn"><span class="btn__t">Checkout</span></button>
+      <p class="mono cart__note">Demo only &mdash; no payment or order is created.</p>
+    </div>
+  </aside>
+  <div class="scrim" data-scrim hidden></div>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <main id="main">
+
+    <!-- C. Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__meta mono" data-reveal>
+          <span>Autumn / Winter 26</span>
+          <span class="hide-sm">Small-batch goods for dogs who live well</span>
+          <span>Vol. 04</span>
+        </div>
+
+        <div class="hero__grid">
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span class="line__in">Good dogs</span></span>
+            <span class="line"><span class="line__in">deserve</span></span>
+            <span class="line"><span class="line__in"><em>good things.</em></span></span>
+          </h1>
+
+          <div class="hero__media">
+            <div class="frame frame--main t-y draw" data-frame>
+              <div class="frame__in" data-parallax="0.05" data-scale="1.1">
+                <div class="art-slot" data-art="dog" data-photo="hero-main.jpg" data-alt="A dog resting in a field at golden hour"></div>
+              </div>
+            </div>
+
+            <div class="frame frame--small t-b" data-frame>
+              <div class="frame__in" data-parallax="-0.07" data-scale="1.12">
+                <div class="art-slot" data-art="ball" data-photo="hero-detail.jpg" data-alt="A natural rubber ball in the grass"></div>
+              </div>
+            </div>
+
+            <div class="hero__spin" aria-hidden="true">
+              <svg viewBox="0 0 120 120" focusable="false">
+                <defs><path id="spinPath" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+                <text><textPath href="#spinPath" startOffset="0">Walked daily &middot; Washed often &middot; Worn in &middot; </textPath></text>
+                <path class="spin__star" d="M60 46v28M46 53l28 14M46 67l28-14"/>
+              </svg>
+            </div>
+
+            <div class="hero__bone" data-parallax="-0.18" aria-hidden="true">
+              <div class="float">
+                <svg viewBox="0 0 80 40" focusable="false">
+                  <g fill="#111"><rect x="12" y="12" width="56" height="16" rx="8"/><circle cx="12" cy="11" r="10"/><circle cx="12" cy="29" r="10"/><circle cx="68" cy="11" r="10"/><circle cx="68" cy="29" r="10"/></g>
+                  <g fill="#FBF3DB"><rect x="14" y="14" width="52" height="12" rx="6"/><circle cx="12" cy="11" r="8"/><circle cx="12" cy="29" r="8"/><circle cx="68" cy="11" r="8"/><circle cx="68" cy="29" r="8"/></g>
+                </svg>
+              </div>
+            </div>
+
+            <span class="hero__caption mono">Plate 01 &mdash; Juniper, 4, after a long loop</span>
+          </div>
+
+          <div class="hero__copy">
+            <p class="hero__lede" data-reveal data-d="500">Considered leads, beds and everyday objects for dogs who live well &mdash; made in small batches, built to wear in, never to be thrown out.</p>
+            <div class="hero__cta" data-reveal data-d="650">
+              <a class="btn" href="#shop" data-magnetic><span class="btn__t">Shop the season</span><svg class="i btn__i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn--line" href="#about" data-magnetic><span class="btn__t">Our story</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <ul class="ticker__group">
+          <li>Walk slower <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Nap longer <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Shed freely <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Chew responsibly <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Be loved loudly <svg class="i"><use href="#i-star"/></svg></li>
+        </ul>
+        <ul class="ticker__group">
+          <li>Walk slower <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Nap longer <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Shed freely <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Chew responsibly <svg class="i"><use href="#i-star"/></svg></li>
+          <li>Be loved loudly <svg class="i"><use href="#i-star"/></svg></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- D. Brand introduction -->
+    <section class="intro section" id="about" aria-labelledby="intro-title">
+      <div class="wrap">
+        <div class="intro__top">
+          <p class="mono intro__label" data-reveal>(01) The house</p>
+          <h2 class="intro__lead" id="intro-title" data-lit>We make the everyday things for dogs the way we&rsquo;d want them for ourselves: <em>quietly well made</em>, honest about materials, and better after <em>every muddy walk.</em></h2>
+        </div>
+
+        <div class="intro__bottom">
+          <figure class="intro__fig" data-reveal>
+            <div class="frame t-b" data-frame>
+              <div class="frame__in" data-parallax="0.05" data-scale="1.1">
+                <div class="art-slot" data-art="collar"></div>
+              </div>
+            </div>
+            <figcaption class="mono">Plate 02 &mdash; The Harvest Collar, vegetable-tanned</figcaption>
+          </figure>
+
+          <div class="intro__copy">
+            <p data-reveal>Barley &amp; Bone began with a single leash, stitched by hand at a kitchen table, because nothing in the shops was worth keeping.</p>
+            <p data-reveal data-d="100">Today a small network of workshops makes the collection in short runs &mdash; leather from a tannery that still uses oak bark, linen washed until it forgets it was new. When a piece sells out, it stays sold out until the next run.</p>
+            <a class="link-u" href="#values" data-reveal data-d="200"><span>What we believe</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E. Shop by collection -->
+    <section class="collections section section--tight" id="collections" aria-labelledby="coll-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="h2 split" id="coll-title">Four ways to <em>spend a day.</em></h2>
+          <p class="sec-head__side" data-reveal>Pick a part of the day &mdash; the walk, the nap, the play, the supper &mdash; and start there.</p>
+        </div>
+
+        <div class="colls">
+          <a class="coll coll--walk t-y" href="#shop" data-filter="walk" data-reveal>
+            <div class="coll__art"><div class="art-slot" data-art="leash" data-photo="collection-walk.jpg" data-alt="A waxed cotton lead"></div></div>
+            <div class="coll__meta">
+              <span class="mono">01 &mdash; 02 featured</span>
+              <h3 class="coll__title">Walking<br><em>Essentials</em></h3>
+            </div>
+            <span class="coll__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+          </a>
+
+          <a class="coll coll--rest t-r" href="#shop" data-filter="rest" data-reveal data-d="100">
+            <div class="coll__art"><div class="art-slot" data-art="bed" data-photo="collection-rest.jpg" data-alt="A washed linen dog bed"></div></div>
+            <div class="coll__meta">
+              <span class="mono">02 &mdash; 02 featured</span>
+              <h3 class="coll__title">Beds &amp; <em>Comfort</em></h3>
+            </div>
+            <span class="coll__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+          </a>
+
+          <a class="coll coll--play t-g" href="#shop" data-filter="play" data-reveal data-d="200">
+            <div class="coll__art coll__art--duo"><div class="art-slot" data-art="ball,rope" data-photo="collection-play.jpg" data-alt="A rubber ball and knotted rope"></div></div>
+            <div class="coll__meta">
+              <span class="mono">03 &mdash; 02 featured</span>
+              <h3 class="coll__title">Toys &amp; <em>Play</em></h3>
+            </div>
+            <span class="coll__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+          </a>
+
+          <a class="coll coll--feed t-b" href="#shop" data-filter="feed" data-reveal data-d="300">
+            <div class="coll__art"><div class="art-slot" data-art="bowl" data-photo="collection-feed.jpg" data-alt="A hand-glazed stoneware bowl"></div></div>
+            <div class="coll__meta">
+              <span class="mono">04 &mdash; 02 featured</span>
+              <h3 class="coll__title">Feeding<br><em>Accessories</em></h3>
+            </div>
+            <span class="coll__arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- F. Featured products -->
+    <section class="shop section" id="shop" aria-labelledby="shop-title">
+      <div class="wrap">
+        <div class="sec-head sec-head--shop">
+          <h2 class="h2 split" id="shop-title">Featured, <em>this season.</em></h2>
+          <div class="filters" role="group" aria-label="Filter products by category">
+            <button class="filter is-active" type="button" data-cat="all" aria-pressed="true">All</button>
+            <button class="filter" type="button" data-cat="walk" aria-pressed="false">Walk</button>
+            <button class="filter" type="button" data-cat="rest" aria-pressed="false">Rest</button>
+            <button class="filter" type="button" data-cat="play" aria-pressed="false">Play</button>
+            <button class="filter" type="button" data-cat="feed" aria-pressed="false">Feed</button>
+            <span class="filters__ind" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <p class="mono shop__status" id="shopStatus" aria-live="polite">Showing 8 of 8 pieces</p>
+        <div class="grid" id="productGrid"></div>
+        <p class="mono shop__demo">Demo catalogue &mdash; &ldquo;Quick add&rdquo; simulates a bag; there is no checkout or inventory.</p>
+      </div>
+    </section>
+
+    <!-- G. Lifestyle campaign -->
+    <section class="camp panel-reveal" id="campaign" aria-labelledby="camp-title">
+      <div class="camp__bg" aria-hidden="true">
+        <span class="camp__word camp__word--a" data-drift="-0.5">Slow walks</span>
+        <span class="camp__word camp__word--b" data-drift="0.5">Long naps</span>
+      </div>
+
+      <div class="wrap camp__in">
+        <p class="mono camp__label" data-reveal>(03) Stories &mdash; The Long Way Home</p>
+
+        <div class="camp__grid">
+          <div class="camp__copy">
+            <h2 class="camp__title split" id="camp-title">The long way home is <em>the whole point.</em></h2>
+            <p class="camp__body" data-reveal>Autumn / Winter 26 was designed on slow loops through wet fields and empty beaches &mdash; the walks where nobody checks the time. A lead that sits right in the hand. A bed that waits by the door.</p>
+            <div class="camp__cta" data-reveal data-d="120">
+              <a class="btn btn--bone" href="#shop" data-magnetic><span class="btn__t">Shop the walk</span><svg class="i btn__i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn--line-bone" href="#values" data-magnetic><span class="btn__t">Read the story</span></a>
+            </div>
+          </div>
+
+          <div class="camp__media">
+            <div class="frame frame--camp t-g draw" data-frame style="--curtain:#111">
+              <div class="frame__in" data-parallax="0.07" data-scale="1.12">
+                <div class="art-slot art-slot--flip" data-art="dog" data-photo="campaign.jpg" data-alt="A dog walking along a beach path"></div>
+              </div>
+            </div>
+            <span class="camp__caption mono">Plate 03 &mdash; Morning loop, low tide</span>
+          </div>
+        </div>
+
+        <dl class="camp__stats">
+          <div data-reveal><dt class="mono">Small-batch runs this year</dt><dd><span data-count="38">38</span></dd></div>
+          <div data-reveal data-d="100"><dt class="mono">Partner workshops</dt><dd><span data-count="9">9</span></dd></div>
+          <div data-reveal data-d="200"><dt class="mono">Test-pack walks logged</dt><dd><span data-count="1284">1,284</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- H. Brand values -->
+    <section class="values section" id="values" aria-labelledby="values-title">
+      <div class="wrap values__grid">
+        <div class="values__side">
+          <p class="mono" data-reveal>(04) Principles</p>
+          <h2 class="h2 split" id="values-title">What we <em>believe.</em></h2>
+          <p class="values__lede" data-reveal>Four rules we hold ourselves to &mdash; and will happily be held to.</p>
+        </div>
+
+        <div class="values__list">
+          <article class="val" tabindex="0">
+            <span class="val__n mono">01</span>
+            <h3 class="val__t">Made to be <em>dirty.</em></h3>
+            <div class="val__d"><p>Everything we make is meant to be washed, chewed, rained on and worn soft. If it looks better after a year, we did it right.</p></div>
+            <svg class="val__g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="16"/><path d="M14 30c6-8 14-8 20 0"/></svg>
+          </article>
+          <article class="val" tabindex="0">
+            <span class="val__n mono">02</span>
+            <h3 class="val__t">Fewer, <em>better</em> things.</h3>
+            <div class="val__d"><p>A handful of pieces each season, in short runs. No flash sales, no filler, nothing you&rsquo;ll be sorry you bought.</p></div>
+            <svg class="val__g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="10" y="10" width="28" height="28"/><path d="M10 38 38 10"/></svg>
+          </article>
+          <article class="val" tabindex="0">
+            <span class="val__n mono">03</span>
+            <h3 class="val__t">Honest <em>materials.</em></h3>
+            <div class="val__d"><p>Vegetable-tanned leather, organic cotton, natural rubber, stoneware. We name every material and tell you where it comes from.</p></div>
+            <svg class="val__g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M6 30c6-10 12-10 18 0s12 10 18 0"/><path d="M6 18c6-10 12-10 18 0s12 10 18 0"/></svg>
+          </article>
+          <article class="val" tabindex="0">
+            <span class="val__n mono">04</span>
+            <h3 class="val__t">Dogs <em>first.</em></h3>
+            <div class="val__d"><p>Every piece is tested by a rotating pack of real dogs before it ships &mdash; and retired if they don&rsquo;t approve.</p></div>
+            <svg class="val__g" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 8v32M10 16l28 16M10 32l28-16"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- I. Newsletter -->
+    <section class="nl section section--tight" id="newsletter" aria-labelledby="nl-title">
+      <div class="wrap">
+        <div class="nl__panel" data-reveal>
+          <div class="nl__star" aria-hidden="true"><svg class="i"><use href="#i-star"/></svg></div>
+          <div class="nl__copy">
+            <p class="mono">(05) The journal</p>
+            <h2 class="h2 split" id="nl-title">Letters from <em>the doghouse.</em></h2>
+            <p class="nl__lede">One considered email a month: new runs, care notes and the occasional very good dog. No discount spam.</p>
+          </div>
+
+          <div class="nl__formwrap">
+            <form class="nl__form" id="newsletterForm" novalidate>
+              <label class="mono" for="nlEmail">Email address</label>
+              <div class="nl__row">
+                <input id="nlEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="nlMsg" required>
+                <button class="btn" type="submit" data-magnetic><span class="btn__t">Subscribe</span><svg class="i btn__i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+              <p class="nl__msg" id="nlMsg" role="alert"></p>
+              <p class="mono nl__fine">Demo form &mdash; the address is validated in your browser and never sent anywhere.</p>
+            </form>
+
+            <div class="nl__ok" id="nlOk" hidden tabindex="-1">
+              <span class="nl__check"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <h3>You&rsquo;re on the list.</h3>
+              <p>The first letter lands next month. <span class="mono">(Demo &mdash; nothing was sent.)</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- J. Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <p class="footer__msg">Small-batch goods for dogs who&rsquo;ve <em>earned them.</em></p>
+
+        <nav class="footer__cols" aria-label="Footer">
+          <div>
+            <h3 class="mono">Shop</h3>
+            <ul>
+              <li><a href="#shop">Leads &amp; collars</a></li>
+              <li><a href="#shop">Beds &amp; blankets</a></li>
+              <li><a href="#shop">Toys &amp; play</a></li>
+              <li><a href="#shop">Feeding</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mono">House</h3>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#campaign">Stories</a></li>
+              <li><a href="#values">Principles</a></li>
+              <li><a href="#newsletter">Journal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mono">Help</h3>
+            <ul>
+              <li><a href="#" data-demo>Shipping</a></li>
+              <li><a href="#" data-demo>Returns</a></li>
+              <li><a href="#" data-demo>Care guide</a></li>
+              <li><a href="#" data-demo>Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mono">Follow</h3>
+            <ul>
+              <li><a href="#" data-demo>Instagram</a></li>
+              <li><a href="#" data-demo>Pinterest</a></li>
+              <li><a href="#" data-demo>TikTok</a></li>
+              <li><a href="#" data-demo>YouTube</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bar mono">
+        <span>&copy; 2026 Barley &amp; Bone</span>
+        <span>Frontend design demo &mdash; not a real store</span>
+        <a href="#top" class="footer__up">Back to top <svg class="i" aria-hidden="true"><use href="#i-up"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__mark" aria-hidden="true"><span data-footmark>Barley &amp; Bone</span></div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
