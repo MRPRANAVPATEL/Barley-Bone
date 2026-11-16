@@ -33,7 +33,7 @@ Barley & Bone is a polished, single-page frontend concept designed for premium p
 ## Live demo
 
 - **Live demo (GitHub Pages):** https://mrpranavpatel.github.io/Barley-Bone/
-- **Vercel:** Coming soon. The deployment URL will be added later.
+- **Vercel (live):** https://barley-bone.vercel.app/
 
 ## Deployment
 
